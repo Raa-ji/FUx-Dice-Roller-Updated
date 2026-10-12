@@ -485,7 +485,9 @@ export async function RollFuxDice(actiondice, dangerdice) {
         summary: submsg + ' => ' + oracle
       };
 
-      renderTemplate("modules/fux-dice-roller/templates/fux-dice-roller-chatmsg-sandbox.hbs", rollData).then(html => {
+      try {
+        const html = await renderTemplate("modules/fux-dice-roller/templates/fux-dice-roller-chatmsg-sandbox.hbs", rollData);
+        console.log("FUx Dice Roller: Template rendered successfully");
         let messageData = {
           content: html,
           type: rvalue,
@@ -497,8 +499,12 @@ export async function RollFuxDice(actiondice, dangerdice) {
           // whisper to self  
           messageData.whisper = ChatMessage.getWhisperRecipients(game.user.name);
         }
-        let newmessage = ChatMessage.create(messageData);
-      });
+        await ChatMessage.create(messageData);
+        console.log("FUx Dice Roller: Chat message created successfully");
+      } catch (error) {
+        console.error("FUx Dice Roller: Error creating chat message:", error);
+        ui.notifications.error("Failed to create chat message: " + error.message);
+      }
     } else {
       // ----------------
       // any other system
@@ -593,7 +599,7 @@ export async function RollFuxDice(actiondice, dangerdice) {
           // whisper to self  
           messageData.whisper = ChatMessage.getWhisperRecipients(game.user.name);
         }
-        let newmessage = ChatMessage.create(messageData);
+        await ChatMessage.create(messageData);
       });       
     }
 

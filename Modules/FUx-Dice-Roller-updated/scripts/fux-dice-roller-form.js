@@ -183,15 +183,25 @@ export class FUxDiceRollerForm extends FormApplication {
 
   async _onRoll(event) {
     event.preventDefault();
-    const button = event.currentTarget;
-    const form = button.form;
-    // get document(used for popout combability)
-    const doc = button.ownerDocument;
-    //debugger;
-    // get selected count
-    let actiondice = this.getSelectedFUDice("Action", doc);
-    let dangerdice = this.getSelectedFUDice("Danger", doc);
-    let result = await RollFuxDice(actiondice, dangerdice);
+    try {
+      const button = event.currentTarget;
+      const form = button.form;
+      // get document(used for popout combability)
+      const doc = button.ownerDocument;
+      console.log("FUx Dice Roller: Roll button clicked");
+      
+      // get selected count
+      let actiondice = this.getSelectedFUDice("Action", doc);
+      let dangerdice = this.getSelectedFUDice("Danger", doc);
+      console.log("FUx Dice Roller: Action dice =", actiondice, "Danger dice =", dangerdice);
+      
+      if (actiondice === 0 && dangerdice === 0) {
+        ui.notifications.warn("FUx Dice Roller: Please select at least one die!");
+        return;
+      }
+      
+      let result = await RollFuxDice(actiondice, dangerdice);
+      console.log("FUx Dice Roller: Roll result =", result);
 
     // --------------------------------------------- 
     let chkSendToCombatTrackerelement=doc.getElementById("fux-dice-roller-form-chkSendToCombatTracker");
@@ -202,6 +212,11 @@ export class FUxDiceRollerForm extends FormApplication {
           await combatant.update({ initiative: result });
         }
       }
+    }
+    } catch (error) {
+      console.error("FUx Dice Roller: Error during roll:", error);
+      ui.notifications.error("FUx Dice Roller: Error during roll - check console for details");
+      throw error;
     }
   }
 

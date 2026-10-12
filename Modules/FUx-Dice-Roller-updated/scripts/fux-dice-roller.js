@@ -241,7 +241,7 @@ Hooks.once('init', () => {
 
 
 Hooks.on("renderSidebarTab", async (app, html) => {
-  if (app.options.id == "chat") {
+  if (app.options.id === "chat" || app.options.id === "chat-log" || app.id === "chat") {
     let icon = html.find('.chat-control-icon');
 
     //console.warn(icon[0].innerHTML);
