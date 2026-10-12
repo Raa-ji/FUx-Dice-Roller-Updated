@@ -34,11 +34,11 @@
     "scripts/fux-dice-roller-combat-helper-form.js",
     "scripts/fux-dice-roller-constants.js"
   ],
-  "manifest": "https://raw.githubusercontent.com/Anderware/Foundry-Vtt-Sandbox-Macros/main/Modules/FUx-Dice-Roller/releases/module.json",
-  "url": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Modules/FUx-Dice-Roller",
-  "download": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/raw/main/Modules/FUx-Dice-Roller/releases/0.4.3/fux-dice-roller-0.4.3.zip",
-  "readme": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/FUx-Dice-Roller/README.MD",
-  "changelog": "https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/blob/main/Modules/FUx-Dice-Roller/releases/0.4.3/changelog.md",
+  "manifest": "https://raw.githubusercontent.com/Raa-ji/FUx-Dice-Roller-Updated/update-fux-dice-roller-v12/Modules/FUx-Dice-Roller-updated/module.json",
+  "url": "https://github.com/Raa-ji/FUx-Dice-Roller-Updated/tree/update-fux-dice-roller-v12/Modules/FUx-Dice-Roller-updated",
+  "download": "https://github.com/Raa-ji/FUx-Dice-Roller-Updated/releases/download/v0.4.3/fux-dice-roller-0.4.3.zip",
+  "readme": "https://github.com/Raa-ji/FUx-Dice-Roller-Updated/blob/update-fux-dice-roller-v12/Modules/FUx-Dice-Roller-updated/README-UPDATED.md",
+  "changelog": "https://github.com/Raa-ji/FUx-Dice-Roller-Updated/blob/update-fux-dice-roller-v12/Modules/FUx-Dice-Roller-updated/releases/0.4.3/changelog.md",
   "media": [
       {
           "type": "icon",
