@@ -50,8 +50,11 @@ class FUxDiceRoller {
   }
 
   static initialize() {
-    // dice roller form
-    game.settings.registerMenu(this.ID, this.SETTINGS.ROLLER_FORM, {
+    try {
+      console.log("FUx Dice Roller: Initializing module...");
+      
+      // dice roller form
+      game.settings.registerMenu(this.ID, this.SETTINGS.ROLLER_FORM, {
       name: `fux-dice-roller.settings.${this.SETTINGS.ROLLER_FORM}.Name`,
       label: `fux-dice-roller.settings.${this.SETTINGS.ROLLER_FORM}.Name`,
       hint: `fux-dice-roller.settings.${this.SETTINGS.ROLLER_FORM}.Hint`,
@@ -236,7 +239,13 @@ Hooks.on("chatMessage", (chatlog, messageText, chatData) => {
 
 
 Hooks.once('init', () => {
-  FUxDiceRoller.initialize();
+  console.log("FUx Dice Roller: init hook triggered");
+  try {
+    FUxDiceRoller.initialize();
+    console.log("FUx Dice Roller: initialization complete");
+  } catch (error) {
+    console.error("FUx Dice Roller: error in init hook:", error);
+  }
 });
 
 
