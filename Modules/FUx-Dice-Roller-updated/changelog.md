@@ -1,5 +1,31 @@
 # FUx Dice Roller - Version 0.4.3
 
+## Changes in this version (Updated for Foundry VTT 13)
+
+### Compatibility Updates
+- **Updated compatibility** to Foundry VTT version 13 (verified)
+- **Added required id field** to module.json
+- **Fixed deprecated API usage**: Removed .data property access from game.user.character
+  - Changed game.user.character.data.img to game.user.character.img
+  - Changed game.user.character.data.name to game.user.character.name
+- **Updated combat API**: Changed game.combat.setInitiative() to combatant.update({ initiative: result })
+
+### Bug Fixes
+- Fixed character image and name display in chat messages
+- Improved combat helper initiative setting compatibility
+- Fixed module initialization error (added required id field)
+
+### Notes
+- All existing features remain unchanged
+- No changes to dice rolling mechanics or system variants
+- Backward compatible with Foundry VTT 10, 11, and 12
+
+---
+
+## Original Changelog (v0.4.2)
+
+### Version 0.4.2
+
 ## Changes in this version
 
 ### Compatibility Updates

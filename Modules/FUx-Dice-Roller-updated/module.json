@@ -1,5 +1,6 @@
 {
   "name": "fux-dice-roller",
+  "id": "fux-dice-roller",
   "title": "FUx Dice Roller",
   "description": "Dice roller for FreeForm Universal(FU) RPG Classic & v2, Action Tales! RPG, Neon City Overdrive RPG, Earthdawn - Age Of Legend",
   "author":"anders-forslund",
@@ -19,8 +20,8 @@
   "version": "0.4.3",
   "compatibility": {
     "minimum": "10",
-    "verified": "12",
-    "maximum": "12"
+    "verified": "13",
+    "maximum": "13"
   }, 
   "styles": [
     "styles/fux-dice-roller.css",
